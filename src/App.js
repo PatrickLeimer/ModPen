@@ -1,13 +1,27 @@
-import logo from './logo.svg';
+import Header from './Components/Header';
+import ModelView from './Components/ModelView';
 import './App.css';
+import DescriptionPanel from './Components/DescriptionPanel';
+
+import { ChakraProvider, Flex, Text } from '@chakra-ui/react'
 
 function App() {
   return (
+    <ChakraProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header/>
+      <body>
+        <Text fontSize='30px'>
+          Welcome to the future of creation. Accessible for anybody, anywhere, to do anything.
+        </Text>
+        <Flex justifyContent="space-between">
+          <ModelView/>
+          <DescriptionPanel/>
+        </Flex>
+      </body>
+      <footer>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Interested? Fill out the interest form below.
         </p>
         <a
           className="App-link"
@@ -15,10 +29,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Interest Form
         </a>
-      </header>
+      </footer>
     </div>
+    </ChakraProvider>
   );
 }
 
