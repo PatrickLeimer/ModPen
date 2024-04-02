@@ -28,25 +28,28 @@ const ModelView = () => {
     }
 
     return (
-        <Container maxH='550px'>
+      <div class="bg-gray-200 p-4 h-60 w-100 rounded-lg" >
             <Canvas gl={{ exposure: -1.02 }}>
               <Environment files="poly_haven_studio_4k.hdr" background />
               <ambientLight intensity={0} />
               <directionalLight intensity={0} />
+              <MapControls></MapControls>
               <pointLight position={[0, 50, 0]} />
-              <OrbitControls></OrbitControls>
-              <Camera position={[200, 200, 0]} />
+              <Camera position={[220, 120, 80]} />
               <Suspense fallback={null}>
                   <Model penColor={penColor}/>
               </Suspense>
             </Canvas>
+            <div class="bg-black p-4 h-10 w-100 rounded-lg" >
             <Slider aria-label='slider-ex-2' colorScheme={penColor} defaultValue={30} onChange={(v) => handleColorChange(v)}>
               <SliderTrack>
                 <SliderFilledTrack />
               </SliderTrack>
               <SliderThumb />
             </Slider>
-        </Container>
+            <div className="absolute inset-0 border border-gray-300 -m-1 rounded-lg pointer-events-none"></div>
+            </div>
+        </div>
 
       );
 };

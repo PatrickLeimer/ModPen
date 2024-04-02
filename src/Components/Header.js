@@ -1,12 +1,10 @@
-import { Heading, Box } from '@chakra-ui/react';
-
 function Header() {
     return (
-        <Box bg='blue' w='100%' p={4} color='white'>
-            <Heading as='h1' size='4xl' noOfLines={1}>
-                Modpen
-            </Heading>
-        </Box>
+        <div class="bg-blue-200 p-4">
+            <heading class="bg-gray-900 text-white py-4">
+                <h1 class="text-4xl font-monserrat">Modpen</h1>
+            </heading>
+        </div>
     )
 
 }
