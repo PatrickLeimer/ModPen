@@ -1,13 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      primary: 'Ubuntu', 
+      secondary: 'Ubuntu'
+    }, 
+    container: {
+      padding: {
+        DEFAULT: '15px',
+      }
+    }, 
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
+
+    },
     extend: {
       colors: {
-        customBackground: 'rgb(29,29,31)', 
-      }
-    },
-  },
-  plugins: [],
-}
+        primary: '#0a0a0a', 
+        accent: '#B809C3',
+      },
 
+
+    },
+    
+  },
+  plugins: [require('tailwindcss'),
+  require('autoprefixer'),
+],
+}
